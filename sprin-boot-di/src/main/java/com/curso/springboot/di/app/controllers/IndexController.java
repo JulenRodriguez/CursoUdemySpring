@@ -18,4 +18,12 @@ public class IndexController {
 		model.addAttribute("objeto", servicio.operacion());
 		return "index";
 	}
+
+	public IServicio getServicio() {
+		return servicio;
+	}
+
+	public void setServicio(IServicio servicio) {
+		this.servicio = servicio;
+	}
 }
