@@ -8,7 +8,7 @@ public class Usuario {
 
 	private String identificador;
 	
-	@NotEmpty(message = "El nombre no puede estar vacio")
+	@NotEmpty(message = "Se requiere un nombre")
 	private String nombre;
 	
 	@NotEmpty
