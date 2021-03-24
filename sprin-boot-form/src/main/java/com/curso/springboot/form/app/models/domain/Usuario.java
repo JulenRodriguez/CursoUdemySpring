@@ -5,9 +5,12 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
+import com.curso.springboot.form.app.validation.IdentificadorRegex;
+
 public class Usuario {
 
 	//@Pattern(regexp = "[0-9]{2}[.][\\d]{3}[.][\\d]{3}[-][A-Z]{1}")
+	@IdentificadorRegex
 	private String identificador;
 	
 	//@NotEmpty(message = "Se requiere un nombre")
