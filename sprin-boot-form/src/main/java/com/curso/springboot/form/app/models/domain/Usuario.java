@@ -3,6 +3,7 @@ package com.curso.springboot.form.app.models.domain;
 import java.util.Date;
 
 import javax.validation.constraints.Email;
+import javax.validation.constraints.Future;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
@@ -45,7 +46,8 @@ public class Usuario {
 	private Integer cuenta;
 	
 	@NotNull
-	@DateTimeFormat(pattern = "yyyy/MM/dd")
+	@Future
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date fechaNacimiento;
 
 	
