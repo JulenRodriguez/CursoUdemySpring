@@ -2,7 +2,6 @@ package com.curso.springboot.form.app.models.domain;
 
 import java.util.Date;
 
-import javax.validation.Valid;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
@@ -51,7 +50,7 @@ public class Usuario {
 	//@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date fechaNacimiento;
 	
-	@Valid
+	@NotNull
 	private Pais pais;
 
 	
