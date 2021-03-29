@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import com.curso.springboot.error.app.errors.UsuarioNoEncontradoException;
 import com.curso.springboot.error.app.models.domain.Usuario;
 import com.curso.springboot.error.app.services.UsuarioService;
 
@@ -27,6 +28,11 @@ public class AppController {
 	public String ver(@PathVariable Integer id, Model model) {
 		
 		Usuario usuario = usuarioService.obtenerPorId(id);
+		
+		if(usuario == null) {
+			throw new UsuarioNoEncontradoException(id.toString());
+		}
+		
 		model.addAttribute("usuario", usuario);
 		model.addAttribute("titulo", "Detalle usuario: ".concat(usuario.getNombre()));
 		
