@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
-import com.curso.springboot.app.models.dao.ClienteDao;
 import com.curso.springboot.app.models.entity.Cliente;
 import com.curso.springboot.app.models.service.ClienteService;
 
