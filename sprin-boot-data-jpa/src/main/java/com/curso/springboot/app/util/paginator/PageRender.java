@@ -22,7 +22,7 @@ public class PageRender<T> {
 		
 		numElementosPorPagina = page.getSize();
 		totalPaginas = page.getTotalPages();
-		paginaActual = page.getNumber();
+		paginaActual = page.getNumber() + 1;
 		
 		int desde, hasta;
 		

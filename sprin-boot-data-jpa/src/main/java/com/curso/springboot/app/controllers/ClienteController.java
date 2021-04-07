@@ -20,6 +20,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.curso.springboot.app.models.entity.Cliente;
 import com.curso.springboot.app.models.service.ClienteService;
+import com.curso.springboot.app.util.paginator.PageRender;
 
 @Controller
 @SessionAttributes("cliente")
@@ -35,6 +36,9 @@ public class ClienteController {
 		
 		Page<Cliente> clientes = clienteService.findAll(pageRequest);
 		
+		PageRender<Cliente> pageRender = new PageRender<>("/listar", clientes);
+		
+		model.addAttribute("page", pageRender);
 		model.addAttribute("titulo", "Listado de clientes");
 		model.addAttribute("clientes", clientes);
 		return "listar";
