@@ -1,3 +1,26 @@
 /* Populate tables */
-INSERT INTO clientes (id, nombre, apellido, email, create_at) VALUES (1, 'John', 'Doe', 'johndoe@fakemail.com', '2021-02-11');
-INSERT INTO clientes (id, nombre, apellido, email, create_at) VALUES (2, 'Sarah', 'Connor', 'terminator@fakemail.com', '2063-08-11');
+INSERT INTO clientes (nombre, apellido, email, create_at) VALUES ('John', 'Doe', 'johndoe@fakemail.com', '2021-02-11');
+INSERT INTO clientes (nombre, apellido, email, create_at) VALUES ('Sarah', 'Connor', 'terminator@fakemail.com', '2063-08-11');
+INSERT INTO clientes (nombre, apellido, email, create_at) VALUES ('John', 'Roe', 'johndoe@fakemail.com', '2021-02-11');
+INSERT INTO clientes (nombre, apellido, email, create_at) VALUES ('Sara', 'Connor', 'terminator@fakemail.com', '2063-08-11');
+INSERT INTO clientes (nombre, apellido, email, create_at) VALUES ('Johny', 'Doe', 'johndoe@fakemail.com', '2021-02-11');
+INSERT INTO clientes (nombre, apellido, email, create_at) VALUES ('Sam', 'Connor', 'terminator@fakemail.com', '2063-08-11');
+INSERT INTO clientes (nombre, apellido, email, create_at) VALUES ('Jonathan', 'Doe', 'johndoe@fakemail.com', '2021-02-11');
+INSERT INTO clientes (nombre, apellido, email, create_at) VALUES ('Sarah', 'Smith', 'terminator@fakemail.com', '2063-08-11');
+INSERT INTO clientes (nombre, apellido, email, create_at) VALUES ('John', 'Foe', 'johndoe@fakemail.com', '2021-02-11');
+INSERT INTO clientes (nombre, apellido, email, create_at) VALUES ('Sarah', 'Rogers', 'terminator@fakemail.com', '2063-08-11');
+INSERT INTO clientes (nombre, apellido, email, create_at) VALUES ('Mark', 'Doe', 'johndoe@fakemail.com', '2021-02-11');
+INSERT INTO clientes (nombre, apellido, email, create_at) VALUES ('Catalina', 'Connor', 'terminator@fakemail.com', '2063-08-11');
+INSERT INTO clientes (nombre, apellido, email, create_at) VALUES ('Michael', 'Doe', 'johndoe@fakemail.com', '2021-02-11');
+INSERT INTO clientes (nombre, apellido, email, create_at) VALUES ('Brooke', 'Connor', 'terminator@fakemail.com', '2063-08-11');
+INSERT INTO clientes (nombre, apellido, email, create_at) VALUES ('John', 'Garcia', 'johndoe@fakemail.com', '2021-02-11');
+INSERT INTO clientes (nombre, apellido, email, create_at) VALUES ('Elle', 'Connor', 'terminator@fakemail.com', '2063-08-11');
+INSERT INTO clientes (nombre, apellido, email, create_at) VALUES ('Clay', 'Doe', 'johndoe@fakemail.com', '2021-02-11');
+INSERT INTO clientes (nombre, apellido, email, create_at) VALUES ('Stu', 'Connor', 'terminator@fakemail.com', '2063-08-11');
+INSERT INTO clientes (nombre, apellido, email, create_at) VALUES ('Iñigo', 'Doe', 'johndoe@fakemail.com', '2021-02-11');
+INSERT INTO clientes (nombre, apellido, email, create_at) VALUES ('Angela', 'Connor', 'terminator@fakemail.com', '2063-08-11');
+INSERT INTO clientes (nombre, apellido, email, create_at) VALUES ('Ander', 'Roe', 'johndoe@fakemail.com', '2021-02-11');
+INSERT INTO clientes (nombre, apellido, email, create_at) VALUES ('Martha', 'Connor', 'terminator@fakemail.com', '2063-08-11');
+INSERT INTO clientes (nombre, apellido, email, create_at) VALUES ('Jack', 'Doe', 'johndoe@fakemail.com', '2021-02-11');
+INSERT INTO clientes (nombre, apellido, email, create_at) VALUES ('Rose', 'Connor', 'terminator@fakemail.com', '2063-08-11');
+INSERT INTO clientes (nombre, apellido, email, create_at) VALUES ('Muhamad', 'Doe', 'johndoe@fakemail.com', '2021-02-11');
