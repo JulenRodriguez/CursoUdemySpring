@@ -1,5 +1,6 @@
 package com.curso.springboot.app.controllers;
 
+import java.io.File;
 import java.net.MalformedURLException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -44,9 +45,11 @@ public class ClienteController {
 	
 	private final Logger log = LoggerFactory.getLogger(getClass());
 	
+	private final static String UPLOADS_FOLDER = "uploads";
+	
 	@GetMapping("/uploads/{filename:.+}")
 	public ResponseEntity<Resource> verFoto(@PathVariable String filename){
-		Path pathFoto = Paths.get("uploads").resolve(filename).toAbsolutePath();
+		Path pathFoto = Paths.get(UPLOADS_FOLDER).resolve(filename).toAbsolutePath();
 		log.info("pathFoto: " + pathFoto);
 		Resource recurso = null;
 		
@@ -132,8 +135,20 @@ public class ClienteController {
 		}
 		
 		if(!foto.isEmpty()) {
+			
+			if(cliente.getId() != null && cliente.getId() < 0 && cliente.getFoto().length() > 0) {
+				
+				Path rootPath = Paths.get(UPLOADS_FOLDER).resolve(cliente.getFoto()).toAbsolutePath();
+				File archivo = rootPath.toFile();
+				
+				if(archivo.exists() && archivo.canRead()) {
+					archivo.delete();
+				}
+			}
+		}
+			
 			String uniqueFilename = UUID.randomUUID().toString() + "_" + foto.getOriginalFilename();
-			Path rootPath = Paths.get("uploads").resolve(uniqueFilename);
+			Path rootPath = Paths.get(UPLOADS_FOLDER).resolve(uniqueFilename);
 			
 			Path rootAbsolutPath = rootPath.toAbsolutePath();
 			
@@ -148,7 +163,7 @@ public class ClienteController {
 			} catch (Exception e) {
 				
 			}
-		}
+		
 		
 		clienteService.save(cliente);
 		status.setComplete();
@@ -160,10 +175,22 @@ public class ClienteController {
 	public String eliminar(@PathVariable(value="id") Long id, RedirectAttributes flash) {
 		
 		if(id > 0) {
+			Cliente cliente = clienteService.findOne(id);
+			
 			clienteService.delete(id);
+			flash.addFlashAttribute("success", "Cliente eliminado con exito");
+			
+			Path rootPath = Paths.get(UPLOADS_FOLDER).resolve(cliente.getFoto()).toAbsolutePath();
+			File archivo = rootPath.toFile();
+			
+			if(archivo.exists() && archivo.canRead()) {
+				if(archivo.delete()) {
+					flash.addFlashAttribute("info", "Foto " + cliente.getFoto() + " eliminada con exito!");
+				}
+			}
 		}
 		
-		flash.addFlashAttribute("success", "Cliente eliminado con exito");
+		
 		return "redirect:/listar";
 	}
 	
